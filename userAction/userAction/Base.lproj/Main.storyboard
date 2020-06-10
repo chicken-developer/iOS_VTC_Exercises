@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="userAction" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zu6-AE-irr" userLabel="MainView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Lxw-X9-lzL">
+                                        <rect key="frame" x="91" y="100" width="240" height="302"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="zWP-VR-TqW" appends="YES" id="bdo-aB-OUE"/>
+                                            <outletCollection property="gestureRecognizers" destination="LY3-kw-eNW" appends="YES" id="M9z-a3-oqv"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mrw-Uh-Hfn">
+                                        <rect key="frame" x="122" y="589" width="171" height="159"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="KBp-n4-x5m" appends="YES" id="cWh-Gx-0QH"/>
+                                            <outletCollection property="gestureRecognizers" destination="LsV-Yh-6cT" appends="YES" id="qaH-6c-PaX"/>
+                                            <outletCollection property="gestureRecognizers" destination="DHy-Xt-gCU" appends="YES" id="bwA-4P-xu8"/>
+                                            <outletCollection property="gestureRecognizers" destination="fbv-X1-77i" appends="YES" id="1q2-al-k9o"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5nR-ew-bP3" appends="YES" id="K5B-Qr-z9B"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="gestureRecognizer" destination="KBp-n4-x5m" id="EGq-LL-YZI"/>
+                        <outlet property="imgViewCode" destination="Lxw-X9-lzL" id="o8B-ZL-vDE"/>
+                        <outlet property="longtap" destination="LsV-Yh-6cT" id="oHk-l7-I0g"/>
+                        <outlet property="maintapoutlet" destination="5nR-ew-bP3" id="SXb-Ox-PHn"/>
+                        <outlet property="myImgView" destination="mrw-Uh-Hfn" id="XnM-eJ-dNQ"/>
+                        <outlet property="myswipe" destination="LY3-kw-eNW" id="eCr-u5-uUT"/>
+                        <outlet property="pangesture" destination="zWP-VR-TqW" id="jYJ-pt-3QX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KBp-n4-x5m">
+                    <connections>
+                        <action selector="tapgesture:" destination="BYZ-38-t0r" id="ZMT-xN-nvJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="LsV-Yh-6cT">
+                    <connections>
+                        <action selector="longtap:" destination="BYZ-38-t0r" id="2Xt-2V-Lly"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="5nR-ew-bP3">
+                    <connections>
+                        <action selector="maintap:" destination="BYZ-38-t0r" id="RN3-Aw-Hz3"/>
+                        <outlet property="delegate" destination="zu6-AE-irr" id="VJz-yC-LIS"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <rotationGestureRecognizer id="DHy-Xt-gCU">
+                    <connections>
+                        <action selector="rotation:" destination="BYZ-38-t0r" id="MFh-tZ-jOe"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="zWP-VR-TqW">
+                    <connections>
+                        <action selector="panGesture:" destination="BYZ-38-t0r" id="ATV-5l-hvf"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="fbv-X1-77i">
+                    <connections>
+                        <action selector="pinchGesture:" destination="BYZ-38-t0r" id="Pwf-sO-bxP"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="LY3-kw-eNW">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="cKe-eO-A5S"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="0.jpg" width="576" height="800"/>
+        <image name="3.jpg" width="353" height="500"/>
+    </resources>
+</document>
